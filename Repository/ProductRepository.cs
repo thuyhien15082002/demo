@@ -8,10 +8,12 @@ namespace ReponsitoryMVC.Repository
     {
         private DbSet<T> _products;
         private DataContext _dataContext;
-        public ProductRepository(DataContext dataContext)
+        private readonly ILogger<T> _logger;
+        public ProductRepository(DataContext dataContext, ILogger<T> logger)
         {
             _dataContext = dataContext;
             _products = _dataContext.Set<T>();
+            _logger = logger;
         }
         public void Delete(int id)
         {
@@ -33,6 +35,7 @@ namespace ReponsitoryMVC.Repository
         public void Save()
         {
             _dataContext.SaveChanges();
+            _logger.LogInformation("Saved changes to the database at {Time}", DateTime.UtcNow);
         }
         public void Update(T prduct)
         {
