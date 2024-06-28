@@ -61,7 +61,17 @@ namespace ReponsitoryMVC.Controllers
             repository.Save();
             return RedirectToAction("Product", "Product");   
         }
-        
+        public IActionResult Arrange()
+        {
+            var arr = repository.Arrange();
+            return View("Product", arr);
+        }
+        public IActionResult ArrangebyName()
+        {
+            var arr = repository.ArrangebyName();
+            return View("Product", arr);
+        }
+
 
     }
 }

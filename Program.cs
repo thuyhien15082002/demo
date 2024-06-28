@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReponsitoryMVC;
 using ReponsitoryMVC.Models;
 using ReponsitoryMVC.Repository;
 
@@ -19,6 +20,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+app.UseMiddleware<ValidateStatusMiddleware>();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Product}/{action=Product}/{id?}");
