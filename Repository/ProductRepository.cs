@@ -55,7 +55,6 @@ namespace ReponsitoryMVC.Repository
 
             return query;
         }
-
         /*public List<Product> GetProducts()
         {
             return _dataContext.Products.ToList();
