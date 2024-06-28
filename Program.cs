@@ -10,7 +10,16 @@ builder.Services.AddDbContext<DataContext>(options =>
 // Đăng ký IProductRepository
 builder.Services.AddScoped<IProductRepository<Product>, ProductRepository<Product>>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization() //Hỗ trợ localization cho các view
+    .AddDataAnnotationsLocalization(); //Hỗ trợ localization cho các thuộc tính dữ liệu
 var app = builder.Build();
+var supportedCultures = new[] { "en-US", "fr-FR", "es-ES" };
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("en-US"),
+};
+app.UseRequestLocalization(localizationOptions);
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
