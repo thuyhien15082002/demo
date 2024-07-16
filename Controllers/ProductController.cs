@@ -7,7 +7,6 @@ namespace ReponsitoryMVC.Controllers
     public class ProductController : Controller
     {
         private IProductRepository<Product> repository;
-        
         public ProductController(IProductRepository<Product> repository)
         {
             this.repository = repository;
