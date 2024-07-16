@@ -1,8 +1,14 @@
 ﻿@page
 @model Razor.Pages.aboutModel
+
 @{
-    ViewData["Title"] = "About page";
+    ViewData["Title"] = "About Page";
 }
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Razor.Pages.aboutModel> Localizer
+
+<h1>@Localizer["Hello"]</h1>
+
 <div class="text-center">
     <h1 class="display-4">@Model.Name</h1>
 </div>
