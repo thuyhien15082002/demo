@@ -10,7 +10,8 @@ namespace ReponsitoryMVC.Repository
         void Update(T product);
         void Delete(int id);
         void Save();
-        
+        IEnumerable<Product> Arrange();
+        IEnumerable<Product> ArrangebyName();
         //List<Product> GetProducts();
 
 
