@@ -6,6 +6,8 @@
         {
             Console.WriteLine($"MyDependency.WriteMessage Message: {message}");
             Console.WriteLine($"MyDependency.WriteMessage Message1: {message}");
+
+            Console.WriteLine($"MyDependency.WriteMessage Message2: {message}");
         }
     }
 }
