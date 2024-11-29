@@ -5,6 +5,7 @@
         public void WriteMessage(string message)
         {
             Console.WriteLine($"MyDependency.WriteMessage Message: {message}");
+            Console.WriteLine($"MyDependency.WriteMessage Message1: {message}");
         }
     }
 }
