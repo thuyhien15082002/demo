@@ -7,5 +7,6 @@ builder.Services.AddScoped<IMyDependency, MyDependency>();
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/hello", () => "Hello World!");
 
 app.Run();
