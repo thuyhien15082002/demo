@@ -101,7 +101,8 @@ namespace StudentAPI.Controllers
         {
             using (var context = new ApiContext())
             {
-                return context.SinhViens.Any(e => e.SoCccd == SoCccd);
+                var a = context.SinhViens.Any(e => e.SoCccd == SoCccd);
+                return a;
             }
         }
 
